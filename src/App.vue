@@ -15,7 +15,6 @@ import Footer from './components/Footer.vue'
 import Home from '@/components/Home.vue'
 import NavBar from '@/components/Navbar.vue'
 const scrollTop = ref(0)
-
 onMounted(() => {
   window.addEventListener('scroll', () => {
     scrollTop.value = document.documentElement.scrollTop

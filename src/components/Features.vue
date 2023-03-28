@@ -1,5 +1,6 @@
 <template>
-  <div id="about_us" class="relative">
+  <div id="about_us" />
+  <div class="relative">
     <div v-if="featureOffsetTop > 0" class="feature-bg absolute">
       <div class="sm:mt-302px mt-32 px-4 md:px-0  text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
         <div class="about_us w-max">
@@ -85,12 +86,12 @@ const getFeatureDetailRefs = (el: any) => {
 
 const touchIndex = (index: number) => {
   if (featureRefs.value[index]) {
-    featureRefs.value[index].scrollIntoView({ behavior: 'smooth' })
+    featureRefs.value[index]?.scrollIntoView({ behavior: 'smooth' })
   }
 }
 
 const toPortfolio = () => {
-  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })
+  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'auto' })
 }
 
 const featureOffsetTop = ref(0)
@@ -111,6 +112,7 @@ onMounted(() => {
   })
   window.addEventListener('scroll', () => {
     offsetTops.value = setOffsetTops()
+    console.log(stickyIndex.value)
     offsetTops.value.forEach((offsetTop, index) => {
       if ((props.scrollTop) >= offsetTop) {
         stickyIndex.value = index

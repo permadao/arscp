@@ -23,7 +23,7 @@
           <Mask @click="isNavberItemVisible = false" />
           <div class="fixed w-full top-16 left-0 p-4 z-10">
             <div class="bg-scp-white rounded-xl text-scp-purple w-full h-max flex flex-col items-center justify-center p-4">
-              <div class="navberItem" @click="toDomPage('about_us')">
+              <div class="navberItem" @click="toAboutUs('about_us')">
                 About Us
               </div>
               <div class="my-2 navberItem" @click="toDomPage('portfolio')">
@@ -43,14 +43,18 @@
 <script setup lang='ts'>
 import { checkParentsHas } from '@/libs'
 import { ref, onMounted } from 'vue'
+import Mask from './Mask.vue'
 const isNavberItemVisible = ref(false)
 const isNavbarItemList = checkParentsHas('navbarList')
 const toDomPage = (id:string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'auto' })
+  isNavberItemVisible.value = false
 }
 const toAboutUs = (id:string) => {
   toDomPage(id)
+  console.log(document.getElementById(id))
   window.scrollBy(0, 2)
+  isNavberItemVisible.value = false
 }
 onMounted(() => {
   document.addEventListener('click', (e) => {
