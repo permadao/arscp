@@ -1,14 +1,13 @@
 <template>
-  <div id="about_us" />
   <div class="relative">
-    <div v-if="featureOffsetTop > 0" class="feature-bg absolute">
+    <div v-if="featureOffsetTop > 0" class="feature-bg absolute bg-opacity-80">
       <div class="sm:mt-302px mt-32 px-4 md:px-0  text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
         <div class="about_us w-max">
           About us
         </div>
       </div>
     </div>
-    <div v-else class="feature-bg sticky">
+    <div v-else class="feature-bg sticky bg-opacity-80">
       <div class="sm:mt-302px mt-32 px-4 md:px-0 text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
         <div class="about_us w-max">
           About us
@@ -112,7 +111,7 @@ onMounted(() => {
   })
   window.addEventListener('scroll', () => {
     offsetTops.value = setOffsetTops()
-    console.log(stickyIndex.value)
+    // console.log(stickyIndex.value)
     offsetTops.value.forEach((offsetTop, index) => {
       if ((props.scrollTop) >= offsetTop) {
         stickyIndex.value = index
@@ -150,7 +149,7 @@ onMounted(() => {
   width: 100%;
   height: 100vh;
   background-image: url('../images/screen_about_banner.png');
-  background-size: 1728px 100vh;
+  background-size: 1728px;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
