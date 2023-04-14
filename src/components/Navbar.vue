@@ -1,9 +1,18 @@
 <template>
-  <div class="w-full z-20 flex items-center justify-between md:h-120px h-16 md:px-16 px-4 bg-white fixed top-0 left-0">
+  <div :class="isNavbarBg ? 'bg-white' : 'bg-black bg-opacity-15'" class="w-full z-20 flex items-center justify-between md:h-100px h-16 md:px-16 px-4  fixed top-0 left-0">
     <a href="#" target="_blank">
-      <img src="@/images/ar_scp_logo.png" class="md:w-40 h-12" alt="">
+      <img
+        v-if="isNavbarBg"
+        src="@/images/ar_scp_logo.png"
+        class="md:w-40 h-12"
+        alt="logo">
+      <img
+        v-else
+        src="@/images/ar_scp_logo_white.png"
+        class="md:w-40 h-12"
+        alt="logo">
     </a>
-    <div class="text-scp-black text-base leading-none font-Roboto-Medium md:block hidden">
+    <div class=" text-base leading-none font-Roboto-Medium md:block hidden" :class="isNavbarBg ? 'text-scp-black' : 'text-white'">
       <div class="hover:text-scp-purple inline-block cursor-pointer" @click="toAboutUs('home')">
         About Us
       </div>
@@ -15,8 +24,8 @@
       </div>
     </div>
     <div class="md:hidden block navbarList">
-      <div :class="isNavberItemVisible ? 'border-opacity-100' : ''" class="border cursor-pointer border-scp-black border-opacity-45 rounded-md hover:border-opacity-100 active:border-opacity-100" @click="isNavberItemVisible = !isNavberItemVisible">
-        <img src="@/images/menu.svg" class="w-6 h-6 p-0.5" alt="menu">
+      <div :class="isNavberItemVisible ? 'border-opacity-100' : ''" class="border w-8 h-8 flex items-center justify-center cursor-pointer border-scp-black border-opacity-45 rounded-md hover:border-opacity-100 active:border-opacity-100" @click="isNavberItemVisible = !isNavberItemVisible">
+        <img src="@/images/menu.svg" class="w-6 h-6" alt="menu">
       </div>
       <transition name="fade">
         <div v-if="isNavberItemVisible">
@@ -42,12 +51,12 @@
 
 <script setup lang='ts'>
 import { checkParentsHas } from '@/libs'
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick, computed } from 'vue'
 import Mask from './Mask.vue'
 const isNavberItemVisible = ref(false)
 const isNavbarItemList = checkParentsHas('navbarList')
 const toDomPage = (id:string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'auto' })
+  scrollTo(0, document.body.scrollHeight)
   isNavberItemVisible.value = false
 }
 const toAboutUs = (id:string) => {
@@ -56,17 +65,27 @@ const toAboutUs = (id:string) => {
   scrollTo(0, bannerHeight)
   nextTick(() => {
     setTimeout(() => {
-      scrollBy(0, 10)
+      scrollBy(0, 5)
     }, 50)
   })
 
   isNavberItemVisible.value = false
 }
+const featureBoxTop = ref(document.getElementById('featureBox')?.getBoundingClientRect().top ?? 0)
+const portfolioTop = ref(document.getElementById('portfolio')?.getBoundingClientRect().top ?? 0)
+const isNavbarBg = computed(() => {
+  return featureBoxTop.value > 0 || portfolioTop.value <= 0
+})
 onMounted(() => {
   document.addEventListener('click', (e) => {
     if (!isNavbarItemList(e.target as HTMLElement)) {
       isNavberItemVisible.value = false
     }
+  })
+  window.addEventListener('scroll', () => {
+    featureBoxTop.value = document.getElementById('featureBox')?.getBoundingClientRect().top ?? 0
+    portfolioTop.value = document.getElementById('portfolio')?.getBoundingClientRect().top ?? 0
+    console.log(portfolioTop.value)
   })
 })
 </script>
