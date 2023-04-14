@@ -1,15 +1,8 @@
 <template>
-  <div class="relative w-full flex justify-center flex-col items-center">
-    <div v-if="featureOffsetTop > 0" class="feature-bg absolute bg-opacity-80">
-      <div class="sm:mt-302px mt-32 px-4 md:px-0  text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
-        <div class=" w-max">
-          About us
-        </div>
-      </div>
-    </div>
-    <div v-else class="feature-bg sticky bg-opacity-80">
+  <div class="relative w-full flex justify-center flex-col items-center h-full">
+    <div class="feature-bg sticky bg-opacity-80">
       <div class="sm:mt-302px mt-32 px-4 md:px-0 text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
-        <div class=" w-max">
+        <div class="w-max">
           About us
         </div>
       </div>
@@ -23,7 +16,7 @@
         <div
           :ref="getFeatureDetailRefs"
           class="flex flex-row items-center justify-center h-full"
-          :class="`${stickyIndex >= index ? 'sticky top-0' : ''}`"
+          :class="`${stickyIndex >= index ? 'top-0' : ''}`"
           :style="`
         --distance-percent: ${distancePercents[index]};
         `"
@@ -111,12 +104,10 @@ onMounted(() => {
   })
   window.addEventListener('scroll', () => {
     offsetTops.value = setOffsetTops()
-    // console.log(stickyIndex.value)
     offsetTops.value.forEach((offsetTop, index) => {
       if ((props.scrollTop) >= offsetTop) {
         stickyIndex.value = index
         const dis = (props.scrollTop - offsetTop) / itemOffsetHeight
-
         if (stickyIndex.value === offsetTops.value.length - 1) {
           distancePercents.value[index] = dis * 0.01
         } else {
@@ -127,7 +118,7 @@ onMounted(() => {
       }
     })
     featureOffsetTop.value = featureBoxDom.value?.getBoundingClientRect().top ?? 0
-  })
+  }, { passive: true })
 })
 </script>
 
@@ -137,6 +128,11 @@ onMounted(() => {
   z-index: 50;
 }
 
+#featureBox{
+  position: relative;
+  height: 300vh;
+  top: -100vh;
+}
 .feature-problem {
   transform: matrix(1, 0, 0, 1, 0, calc((var(--distance-percent) * 4)));
   /* 25% 就隐藏 */
