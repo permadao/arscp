@@ -1,20 +1,20 @@
 <template>
-  <div class="relative">
+  <div class="relative w-full flex justify-center flex-col items-center">
     <div v-if="featureOffsetTop > 0" class="feature-bg absolute bg-opacity-80">
       <div class="sm:mt-302px mt-32 px-4 md:px-0  text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
-        <div class="about_us w-max">
+        <div class=" w-max">
           About us
         </div>
       </div>
     </div>
     <div v-else class="feature-bg sticky bg-opacity-80">
       <div class="sm:mt-302px mt-32 px-4 md:px-0 text-white sm:text-32px text-2xl leading-8 font-Roboto-Medium max-w-1200px mx-auto">
-        <div class="about_us w-max">
+        <div class=" w-max">
           About us
         </div>
       </div>
     </div>
-    <div ref="featureBoxDom" class="max-w-1200px w-full mx-auto px-4 md:px-0">
+    <div id="featureBox" ref="featureBoxDom" class="max-w-1200px w-full mx-auto px-4 md:px-0">
       <div
         v-for="(n, index) in 4"
         :key="n"
@@ -145,20 +145,14 @@ onMounted(() => {
 
 .feature-bg {
   top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
+  min-height: 796px;
   background-image: url('../images/screen_about_banner.png');
-  background-size: 1728px;
-  background-position: center;
+  background-size: auto 100%;
+  background-position: top center;
   background-repeat: no-repeat;
   overflow: hidden;
-}
-
-.about_us {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 9.46%, rgba(0, 0, 0, 0.2925) 33.86%, rgba(0, 0, 0, 0.5785) 59.26%, rgba(0, 0, 0, 0.3705) 77.49%, rgba(0, 0, 0, 0) 93.24%);
-  mix-blend-mode: normal;
-  backdrop-filter: blur(0.5px);
 }
 
 @media (max-width:500px) {
@@ -167,17 +161,12 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
     background-image: url('../images/small_about_banner.png');
     background-size: 100% 100vh;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-  }
-
-  .about_us {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 9.46%, rgba(0, 0, 0, 0.2925) 33.86%, rgba(0, 0, 0, 0.5785) 59.26%, rgba(0, 0, 0, 0.3705) 77.49%, rgba(0, 0, 0, 0) 93.24%);
-    mix-blend-mode: normal;
-    backdrop-filter: blur(0px);
   }
 }
 </style>

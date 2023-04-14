@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="w-full bg-scp-black4 md:py-12 py-8 px-4 md:px-0">
+  <div id="footer" class="w-full bg-scp-black4 md:py-9 py-8 px-4 md:px-0">
     <div class="max-w-1200px w-full mx-auto flex justify-between md:items-center items-start md:flex-row flex-col">
       <img src="@/images/arweave_scp_footer.png" class="md:h-7 h-6" alt="arweave_scp">
       <div class="flex sm:items-center items-start sm:flex-row flex-col font-Roboto-Regular text-sm sm:text-base sm:leading-none text-white mt-8 md:mt-0 w-full md:w-auto">
