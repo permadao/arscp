@@ -74,7 +74,12 @@ const toDomPage = (id:string) => {
   } else {
     scrollTo(0, document.body.scrollHeight - 750)
   }
-
+  nextTick(() => {
+    setTimeout(() => {
+      scrollBy(0, -2)
+      scrollBy(0, 2)
+    }, 50)
+  })
   isNavberItemVisible.value = false
 }
 const toAboutUs = (id:string) => {
