@@ -128,11 +128,12 @@ onMounted(() => {
   z-index: 50;
 }
 
-#featureBox{
+#featureBox {
   position: relative;
   height: 300vh;
   top: -100vh;
 }
+
 .feature-problem {
   transform: matrix(1, 0, 0, 1, 0, calc((var(--distance-percent) * 4)));
   /* 25% 就隐藏 */
