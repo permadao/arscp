@@ -8,7 +8,7 @@
         </div>
         <div class="flex sm:items-center justify-between sm:justify-start  mt-4 sm:mt-0 w-full sm:leading-normal leading-10">
           <div class="sm:h-6 h-5 flex items-center sm:mx-8 mx-0">
-            <img src="@/images/email.png" class="h-full mr-2" alt="email"> arscp@ever.finance
+            <img src="@/images/email.png" class="h-full mr-2" alt="email"> arscp@ever.vision
           </div>
           <!-- <div class="sm:h-6 h-5 flex items-center">
           <img src="@/images/twitter.png" class="h-full mr-2" alt="twitter"> @ArscpV
