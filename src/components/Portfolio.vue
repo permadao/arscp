@@ -19,7 +19,7 @@
         <div class="md:h-20 h-16 flex justify-center items-center font-Roboto-Medium text-scp-purple text-base leading-none">
           Stay tuned...
         </div>
-        <img src="@/images/top_right_arrow.png" class="w-3 h-3 absolute right-7 top-7" alt="">
+        <!-- <img src="@/images/top_right_arrow.png" class="w-3 h-3 absolute right-7 top-7" alt=""> -->
       </div>
     </div>
   </div>
