@@ -1,5 +1,5 @@
 <template>
-  <div class="md:pt-64 pt-16 bg-white md:pb-164px pb-16">
+  <div id="home" class="md:pt-64 pt-16 bg-white md:pb-164px pb-16">
     <div class="max-w-1200px w-full mx-auto">
       <div class="flex justify-between items-center relative px-4 md:px-0">
         <div class="z-10 mt-148px md:mt-0">

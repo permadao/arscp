@@ -26,7 +26,6 @@ module.exports = {
       margin: {
         '406px': '406px',
         '302px': '302px',
-        '148px': '148px',
         '120px': '120px',
         '55px': '55px',
         '33px': '33px'
@@ -43,7 +42,7 @@ module.exports = {
       },
       height: {
         '400px': '400px',
-        '120px': '120px'
+        '100px': '100px'
       },
       maxWidth: {
         '1200px': '1200px'
@@ -59,11 +58,14 @@ module.exports = {
         '14px': ['14px', '22px']
       },
       spacing: {
-        '303px': '303px'
+        '148px': '148px',
+        '303px': '303px',
+        '30px': '30px'
       },
       opacity: {
         45: '.45',
-        0.85: '.85'
+        0.85: '.85',
+        15: '.15'
       },
       animation: {
         'bounce-slow': 'bounce 2s linear infinite'
