@@ -4,12 +4,12 @@
       <img
         v-show="isNavbarBg"
         src="@/images/arscp_logo_black.png"
-        class="h-30px"
+        class="h-9"
         alt="logo">
       <img
         v-show="!isNavbarBg"
         src="@/images/arscp_logo_white.png"
-        class="h-30px"
+        class="h-9"
         alt="logo">
     </a>
     <div class=" text-base leading-none font-Roboto-Medium md:block hidden" :class="isNavbarBg ? 'text-scp-black' : 'text-white'">
