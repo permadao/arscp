@@ -72,7 +72,11 @@ const toDomPage = (id:string) => {
   if (window.innerWidth <= 765) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'auto' })
   } else {
-    scrollTo(0, document.body.scrollHeight - 750)
+    if (id === 'portfolio') {
+      scrollTo(0, document.body.scrollHeight - 750)
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'auto' })
+    }
   }
   nextTick(() => {
     setTimeout(() => {
