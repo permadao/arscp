@@ -10,9 +10,9 @@
           <div class="sm:h-6 h-5 flex items-center sm:mx-8 mx-0">
             <img src="@/images/email.png" class="h-full mr-2" alt="email"> arscp@ever.vision
           </div>
-          <!-- <div class="sm:h-6 h-5 flex items-center">
-          <img src="@/images/twitter.png" class="h-full mr-2" alt="twitter"> @ArscpV
-          </div> -->
+          <a class="sm:h-6 h-5 flex items-center" href="https://twitter.com/ArweaveSCP" target="_blank">
+            <img src="@/images/twitter.png" class="h-full mr-2" alt="twitter"> @ArweaveSCP
+          </a>
         </div>
       </div>
     </div>
