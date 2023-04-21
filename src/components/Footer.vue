@@ -6,8 +6,8 @@
         <div class="whitespace-nowrap">
           Contact Us
         </div>
-        <div class="flex sm:items-center justify-between sm:justify-start  mt-4 sm:mt-0 w-full sm:leading-normal leading-10">
-          <div class="sm:h-6 h-5 flex items-center sm:mx-8 mx-0">
+        <div class="flex sm:items-center justify-start  mt-4 sm:mt-0 w-full sm:leading-normal leading-10">
+          <div class="sm:h-6 h-5 flex items-center sm:mx-8  mr-6 ">
             <img src="@/images/email.png" class="h-full mr-2" alt="email"> arscp@ever.vision
           </div>
           <a class="sm:h-6 h-5 flex items-center" href="https://twitter.com/ArweaveSCP" target="_blank">
