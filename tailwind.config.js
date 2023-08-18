@@ -42,10 +42,12 @@ module.exports = {
       },
       height: {
         '400px': '400px',
+        '188px': '188px',
         '100px': '100px'
       },
       maxWidth: {
-        '1200px': '1200px'
+        '1200px': '1200px',
+        '378px': '378px'
       },
       minWidth: {
         '400px': '400px',
