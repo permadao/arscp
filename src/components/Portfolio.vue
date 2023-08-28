@@ -54,7 +54,7 @@ const portfolioList = computed(() => {
         hoverImg: 'permaweb_news.svg'
       },
       {
-        href: 'https://twitter.com/i/flow/login?redirect_after_login=%2Fstarpowerworld',
+        href: 'https://www.starpower.world/#/',
         defaultImg: 'starpoweer_nomal.svg',
         hoverImg: 'starpoweer.svg'
       },
