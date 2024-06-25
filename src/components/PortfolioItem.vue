@@ -6,7 +6,8 @@
     @mouseover="isHover = true"
     @mouseleave="isHover = false">
     <div
-      class="md:h-20 md:w-120px w-24 h-16 flex justify-center items-center">
+      :class="className ? className : ''"
+      class="flex justify-center items-center">
       <img v-show="isHover" :src="require(`@/images/portfolio/${hoverImg}`)" alt="hoverSrc">
       <img v-show="!isHover" :src="require(`@/images/portfolio/${defaultImg}`)" alt="">
     </div>
@@ -21,6 +22,7 @@ interface Props {
   href: string
   defaultImg: string
   hoverImg: string
+  className: string
 }
 
 defineProps<Props>()
