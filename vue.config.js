@@ -2,7 +2,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const EncodingPlugin = require('webpack-encoding-plugin')
 const isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
-  // publicPath: './',
+  publicPath: './',
   // 配置webpack
   // 打包优化参考：https://juejin.cn/post/6844903961154207757
   configureWebpack: (config) => {
